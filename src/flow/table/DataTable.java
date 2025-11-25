@@ -1,5 +1,6 @@
 package flow.table;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DataTable {
@@ -7,8 +8,8 @@ public class DataTable {
     private List<List<String>> rows;
 
     public DataTable(List<String> columns, List<List<String>> rows) {
-        this.columns = columns;
-        this.columns = columns;
+        this.columns = new ArrayList<>(columns);
+        this.rows = new ArrayList<>(rows);
     }
 
     public List<String> getColumns() {
