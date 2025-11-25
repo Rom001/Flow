@@ -25,9 +25,14 @@ Flow est un mini ETL.
 
 Pour l'instant il n'est possible de charger un fichier csv 
     
-    Main.java ligne 12.
+Main.java ligne 12.
 
 ## Executer le programme
-javac -d bin $(find src -name "*.java")
+    
+compilier :
 
-java -cp bin flow.Main    
+    javac -d bin $(find src -name "*.java")
+
+Executer :
+
+    java -cp bin flow.Main    
