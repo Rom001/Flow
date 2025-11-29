@@ -25,6 +25,7 @@ public class Filter {
                 case ">" -> keep = cell > target;
                 case "<" -> keep = cell < target;
                 case "=" -> keep = cell == target;
+                case "!=" -> keep = cell != target;
                 default -> throw new IllegalArgumentException("Opérateur invalide : " + op);
             }
 

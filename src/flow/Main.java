@@ -15,7 +15,7 @@ public class Main {
             System.out.println("Colonnes " + table.getColumns());
             System.out.println("Nombre de ligne : " + table.getRows().size());
 
-            DataTable filtered = Filter.apply(table, "Age", ">", "26");
+            DataTable filtered = Filter.apply(table, "Age", "!=", "23");
 
             //test export
             CsvExporter.export(filtered, "csv/NPA_export.csv");
