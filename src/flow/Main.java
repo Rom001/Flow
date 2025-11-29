@@ -2,7 +2,8 @@ package flow;
 
 import flow.io.CsvExporter;
 import flow.io.CsvLoader;
-import flow.table.DataTable;
+import flow.steps.Filter;
+import flow.table.DataTable;;
 
 public class Main {
     
@@ -14,8 +15,10 @@ public class Main {
             System.out.println("Colonnes " + table.getColumns());
             System.out.println("Nombre de ligne : " + table.getRows().size());
 
+            DataTable filtered = Filter.apply(table, "Age", ">", "26");
+
             //test export
-            CsvExporter.export(table, "csv/NPA_export.csv");
+            CsvExporter.export(filtered, "csv/NPA_export.csv");
             System.out.println("Export terminé");
 
         }catch(Exception e){
