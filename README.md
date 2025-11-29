@@ -23,7 +23,7 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 
 Flow est un mini ETL.
 
-Pour l'instant il n'est possible de charger un fichier csv 
+Pour l'instant il est possible de charger un fichier csv 
     
 Main.java ligne 12.
 
