@@ -13,6 +13,8 @@ public class Filter {
             throw new IllegalArgumentException("Colonne inconue : " + columns);
         }
 
+        ///ColumnType columnType = detectColumnType(input, colIndex);
+
         List<List<String>> filteredRows = new ArrayList<>();
 
         double target = Double.parseDouble(values);
@@ -21,12 +23,38 @@ public class Filter {
             double cell = Double.parseDouble(row.get(colIndex));
             boolean keep = false;
 
+            // switch (op) {
+              //  case ">" -> {
+                //    if (columnType != ColumnType.NUMERIC) {
+                  //      throw new IllegalArgumentException("Opérateur '>' réservé aux colonnes numériques");
+                    //}
+                //}
+                //case "<" -> {
+                  //  if (columnType != ColumnType.NUMERIC) {
+                    //    throw new IllegalArgumentException("Opérateur '>' réservé aux colonnes numériques");
+                    //}
+                //}
+                //case "=" -> {
+                  //  if (columnType != ColumnType.NUMERIC) {
+                    //    throw new IllegalArgumentException("Opérateur '>' réservé aux colonnes numériques");
+                    //}
+                //}
+                //case "!=" -> {
+                  //  if (columnType != ColumnType.NUMERIC) {
+                    //    throw new IllegalArgumentException("Opérateur '>' réservé aux colonnes numériques");
+                    //}
+                //}
+                //default -> throw new IllegalArgumentException("Opérateur invalide : " + op);
+            //} 
+
             switch (op) {
                 case ">" -> keep = cell > target;
                 case "<" -> keep = cell < target;
                 case "=" -> keep = cell == target;
                 case "!=" -> keep = cell != target;
+
                 default -> throw new IllegalArgumentException("Opérateur invalide : " + op);
+                
             }
 
             if (keep) {
@@ -35,5 +63,6 @@ public class Filter {
         }
         return new DataTable(input.getColumns(), filteredRows);
     }
+
     
 }
